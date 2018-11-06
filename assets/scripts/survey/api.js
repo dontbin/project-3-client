@@ -31,8 +31,11 @@ const editSurvey = function (surveyData, id) {
     data: {
       'survey': {
         'title': surveyData.title,
-        'question': surveyData.duration,
-        'admin': store.user.email
+        'question': surveyData.question,
+        'admin': store.user.email,
+        'response': {
+          'answer': surveyData.Response.question
+        }
       }
     }
   })
