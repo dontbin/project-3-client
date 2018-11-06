@@ -41,7 +41,7 @@ const editSurvey = function (surveyData, id) {
   })
 }
 
-const addSurvey = function (surveyData) {
+const addSurvey = function (surveyData, admin) {
   return $.ajax({
     url: config.apiUrl + '/surveys',
     method: 'POST',
@@ -49,7 +49,11 @@ const addSurvey = function (surveyData) {
       Authorization: `Token token=${store.user.token}`
     },
     data: {
-      'survey': surveyData
+      'survey': {
+        'title': surveyData.title,
+        'question': surveyData.question,
+        'admin': admin
+      }
     }
   })
 }
