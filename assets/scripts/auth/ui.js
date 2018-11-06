@@ -16,6 +16,8 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  $('#change-password-button, #sign-out-button').removeClass('hidden')
+  $('#sign-up-button, #sign-in-button').addClass('hidden')
   $('#display-message').html('').hide()
   $('#sign-in-form').trigger('reset')
   $('#display-message').css('color', 'green')
@@ -44,6 +46,8 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   store.user = null
+  $('#change-password-button, #sign-out-button').addClass('hidden')
+  $('#sign-up-button, #sign-in-button').removeClass('hidden')
   $('#display-message').html('').hide()
   $('#sign-up-form, #sign-in-form, #change-password-form').trigger('reset')
   $('#display-message').text(`You have signed out`).fadeToggle().delay(1000).fadeToggle()
