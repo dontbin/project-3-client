@@ -86,15 +86,24 @@
 
       </ul>
     </div>
-    <div id="state-message" class="hidden state"></div>
+    <div id="display-message"></div>
   </nav>
-  <form id="add-survey-form" class="" aria-labelledby="add-survey">
-    <div class="form-group">
+  <div id="dashboard">
+    <button id="create-button" type="button" class="btn btn-primary create-button">Create a survey</button>
+  </div>
+  <div id="create-survey-form" class="hidden" >
+    <form id="add-survey-form" class="create-survey-question">
+      <div class="form-group">
+        <label>Enter a title for the survey</label>
         <input required type="text" name="title" placeholder="Enter Survey Title" />
-        <input required type="text" name="question" placeholder="Enter Question" />
-        <input type="submit" />
+        <label>Enter a question for a fist of five</label>
+        <input required type="text" name="question" placeholder="Enter question">
       </div>
-  </form>
+      <button type="submit" class="btn btn-success">Create survey</button>
+    </form>
+
+  </div>
+
 
 </body>
 
