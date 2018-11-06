@@ -4,7 +4,7 @@ const switchToCreateSurvey = function (event) {
   event.preventDefault()
   console.log(event)
   $('#dashboard').addClass('hidden')
-  $('#create-survey').removeClass('hidden')
+  $('#create-survey-form').removeClass('hidden')
 }
 
 
