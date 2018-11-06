@@ -1,9 +1,9 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const showSurveys = function () {
+const showResponses = function () {
   return $.ajax({
-    url: config.apiUrl + '/surveys',
+    url: config.apiUrl + '/responses',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -11,9 +11,9 @@ const showSurveys = function () {
   })
 }
 
-const removeSurvey = function (surveyId) {
+const removeResponse = function (responseId) {
   return $.ajax({
-    url: config.apiUrl + '/surveys/' + surveyId,
+    url: config.apiUrl + '/responses/' + responseId,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -21,39 +21,37 @@ const removeSurvey = function (surveyId) {
   })
 }
 
-const editSurvey = function (surveyData, id) {
+const editResponse = function (responseData, id) {
   return $.ajax({
-    url: config.apiUrl + '/surveys/' + id,
+    url: config.apiUrl + '/responses/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     data: {
-      'survey': {
-        'title': surveyData.title,
-        'question': surveyData.question,
-        'admin': store.user.email
+      'response': {
+        'question': responseData.question
       }
     }
   })
 }
 
-const addSurvey = function (surveyData) {
+const addResponse = function (responseData) {
   return $.ajax({
-    url: config.apiUrl + '/surveys',
+    url: config.apiUrl + '/responses',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     data: {
-      'survey': surveyData
+      'response': responseData
     }
   })
 }
 
 module.exports = {
-  showSurveys,
-  removeSurvey,
-  addSurvey,
-  editSurvey
+  showResponses,
+  removeResponse,
+  addResponse,
+  editResponse
 }
