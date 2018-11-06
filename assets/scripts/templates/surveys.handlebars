@@ -1,0 +1,18 @@
+
+{{#each surveys as |survey|}}
+
+  <section class='survey_sections' data-id="{{survey._id}}">
+    <h1 data-id="{{survey._id}}">{{survey.title}}</h1>
+      <!--  view results-->
+      {{#each survey.response as |response|}}
+      <div class='survey-responses'>{{response.answer}}</div>
+      {{/each}}
+      <br>
+
+      <p>Respond to this survey:</p>
+      <form class="single-form respond-form">
+        <input type='number' name="duration" min="0" max='5' placeholder="Enter # from 1-5" />=
+        <input type="submit" />
+      </form>
+  </section>
+{{/each}}
