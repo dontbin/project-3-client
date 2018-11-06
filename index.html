@@ -1,17 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Don't-Bin-Survey</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+  <li class="nav-item active">
+
+
+  </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        <div class="sign-in-dropdown">
+          <button id='sign-in-button' class="btn btn-success navbar-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOG IN</button>
+        <form class="dropdown-menu p-4" aria-labelledby="sign-in-button">
+          <div class="form-group">
+            <label for="DropDownFormSignIn">Email address</label>
+            <input type="email" class="form-control" id="DropDownFormSignIn" placeholder="email@example.com">
+          </div>
+            <div class="form-group">
+              <label for="dropDownFormSignInPassword">Password</label>
+              <input type="password" class="form-control" id="dropDownFormSignInPassword" placeholder="Password">
+            </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+      </div>
+    </li>
+    <li class="nav-item active">
+      <div class="sign-up-dropdown">
+        <button id='sign-up-button' class="btn btn-warning navbar-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN-UP</button>
+      <form class="dropdown-menu p-4" aria-labelledby="sign-up-button">
+        <div class="form-group">
+          <label for="DropDownFormSignUp">Email address</label>
+          <input type="email" class="form-control" id="DropDownFormSignUp" placeholder="email@example.com">
+        </div>
+          <div class="form-group">
+            <label for="dropDownFormPasswordSignUp">Password</label>
+            <input type="password" class="form-control" id="dropdownFormPasswordSignUp" placeholder="Password">
+            <br>
+            <label for="dropDownFormPasswordSignUp">Confirm Password</label>
+            <input type="password" class="form-control" id="dropdownFormPasswordSignUp" placeholder="Password Confirmation">
+          </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+    </div>
+  </li>
+
+
+
+        <li class="nav-item active">
+          <div class="change-password-dropdown">
+            <button id='change-password-button' class="btn btn-warning navbar-btn dropdown-toggle hidden" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Password</button>
+          <form class="dropdown-menu p-4" aria-labelledby="change-password-button">
+            <div class="form-group">
+                <label for="dropDownFormPasswordSignUp">Current Password</label>
+                <input type="password" class="form-control" id="dropdownFormPasswordSignUp" placeholder="Current Password">
+                <br>
+                <label for="dropDownFormPasswordSignUp">New Password</label>
+                <input type="password" class="form-control" id="dropdownFormChangePassword" placeholder="New Password">
+              </div>
+                <button type="submit" class="btn btn-primary">Change Password</button>
+          </form>
+        </div>
+        </li>
+        <li class="nav-item active">
+          <button id='sign-out-button' class="btn btn-danger navbar-btn hidden" type="button">SIGN-UP</button>
+        </li>
+
+      </ul>
+    </div>
+    <div id="state-message" class="hidden state"></div>
+  </nav>
+</body>
+
 </html>
