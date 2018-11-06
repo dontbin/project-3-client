@@ -30,14 +30,14 @@
         <li class="nav-item active">
         <div class="sign-in-dropdown">
           <button id='sign-in-button' class="btn btn-success navbar-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOG IN</button>
-        <form class="dropdown-menu p-4" aria-labelledby="sign-in-button">
+        <form id="sign-in-form" class="dropdown-menu p-4" aria-labelledby="sign-in-button">
           <div class="form-group">
             <label for="DropDownFormSignIn">Email address</label>
-            <input type="email" class="form-control" id="DropDownFormSignIn" placeholder="email@example.com">
+            <input type="email" class="form-control"  placeholder="email@example.com">
           </div>
             <div class="form-group">
               <label for="dropDownFormSignInPassword">Password</label>
-              <input type="password" class="form-control" id="dropDownFormSignInPassword" placeholder="Password">
+              <input type="password" class="form-control"  placeholder="Password">
             </div>
               <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
@@ -46,17 +46,17 @@
     <li class="nav-item active">
       <div class="sign-up-dropdown">
         <button id='sign-up-button' class="btn btn-warning navbar-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN-UP</button>
-      <form class="dropdown-menu p-4" aria-labelledby="sign-up-button">
+      <form id=sign-up-form class="dropdown-menu p-4" aria-labelledby="sign-up-button">
         <div class="form-group">
           <label for="DropDownFormSignUp">Email address</label>
-          <input type="email" class="form-control" id="DropDownFormSignUp" placeholder="email@example.com">
+          <input type="email" class="form-control"  placeholder="email@example.com">
         </div>
           <div class="form-group">
             <label for="dropDownFormPasswordSignUp">Password</label>
-            <input type="password" class="form-control" id="dropdownFormPasswordSignUp" placeholder="Password">
+            <input type="password" class="form-control"  placeholder="Password">
             <br>
             <label for="dropDownFormPasswordSignUp">Confirm Password</label>
-            <input type="password" class="form-control" id="dropdownFormPasswordSignUp" placeholder="Password Confirmation">
+            <input type="password" class="form-control"  placeholder="Password Confirmation">
           </div>
             <button type="submit" class="btn btn-primary">Sign up</button>
       </form>
@@ -68,13 +68,13 @@
         <li class="nav-item active">
           <div class="change-password-dropdown">
             <button id='change-password-button' class="btn btn-warning navbar-btn dropdown-toggle hidden" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Password</button>
-          <form class="dropdown-menu p-4" aria-labelledby="change-password-button">
+          <form id="change-password-form" class="dropdown-menu p-4" aria-labelledby="change-password-button">
             <div class="form-group">
                 <label for="dropDownFormPasswordSignUp">Current Password</label>
-                <input type="password" class="form-control" id="dropdownFormPasswordSignUp" placeholder="Current Password">
+                <input type="password" class="form-control"  placeholder="Current Password">
                 <br>
                 <label for="dropDownFormPasswordSignUp">New Password</label>
-                <input type="password" class="form-control" id="dropdownFormChangePassword" placeholder="New Password">
+                <input type="password" class="form-control"  placeholder="New Password">
               </div>
                 <button type="submit" class="btn btn-primary">Change Password</button>
           </form>
