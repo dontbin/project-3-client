@@ -7,9 +7,9 @@ const switchToCreateSurvey = function (event) {
 }
 
 const surveyCreated = function () {
+  $('#add-survey-form').trigger('reset')
   $('#dashboard').removeClass('hidden')
   $('#create-survey-form').addClass('hidden')
-  $('#create-survey-form').trigger('reset')
 }
 
 module.exports = {
