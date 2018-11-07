@@ -5,7 +5,7 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 const appUi = require('../ui.js')
 
-let answer
+// let answer
 
 const onUpdateSurvey = function (event) {
   let survey
@@ -16,7 +16,7 @@ const onUpdateSurvey = function (event) {
   }
   event.preventDefault()
   const surveyData = getFormFields(event.target)
-  answer = surveyData.question
+  // answer = surveyData.question
   const id = survey._id
   api.editSurvey(surveyData, id)
     .then(onShowResponses)
@@ -29,8 +29,8 @@ const onShowResponses = function (survey) {
   responses.forEach((response) => {
     result += response.answer
   })
-  result += answer
-  const average = result / (responses.length + 1)
+  // result += answer
+  const average = result / responses.length
   $(`#questionaire-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
   $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
