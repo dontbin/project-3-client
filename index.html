@@ -18,8 +18,8 @@
     <a class="navbar-brand" href="#">Don't-Bin-Survey</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
   <li class="nav-item active">
 
@@ -81,28 +81,26 @@
         <li class="nav-item active">
           <button id='sign-out-button' class="btn btn-danger navbar-btn hidden" type="button">SIGN-OUT</button>
         </li>
-
+        <li>
+          <div id="dashboard" class="dashbutton">
+            <button id="create-button" type="button" class="btn btn-success create-button ">Create Survey</button>
+          </div>
+        </li>
       </ul>
     </div>
     <div id="display-message"></div>
   </nav>
 
-  <div id="dashboard">
-    <button id="create-button" type="button" class="btn btn-primary create-button">Create a survey</button>
-  </div>
-  <div id="create-survey-form" class="hidden" >
+  <!-- <div class="tensection"> -->
+  <div id="create-survey-form" class="hidden tensection">
     <form id="add-survey-form" class="create-survey-question">
-      <div class="form-group">
-        <label>Enter a title for the survey</label>
-        <input required type="text" name="title" placeholder="Enter Survey Title" />
-        <label>Enter a question for a fist of five</label>
-        <input required type="text" name="question" placeholder="Enter question">
-      </div>
-      <button type="submit" class="btn btn-success">Create survey</button>
+      <input required type="text" name="title" placeholder="Enter Survey Title" />
+      <input required type="text" name="question" placeholder="Enter question fist to 5">
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
-
   </div>
 
+<!-- </div> -->
 </body>
 
 </html>
