@@ -1,3 +1,4 @@
+
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
 
