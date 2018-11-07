@@ -48,8 +48,8 @@ const onAddSurvey = function (event) {
   const surveyData = getFormFields(event.target)
   const admin = store.user.email
   api.addSurvey(surveyData, admin)
-    .then(() => onShowSurveys(event))
     .then(appUi.surveyCreated)
+    .then(() => onShowSurveys(event))
     .catch(console.error)
 }
 
