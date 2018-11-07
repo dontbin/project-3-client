@@ -3,6 +3,7 @@ const api = require('./api.js')
 
 const ui = require('./ui.js')
 const store = require('../store.js')
+const appUi = require('../ui.js')
 
 // Getting ID will depend on how surveys are displayed in UI
 // const onRemoveSurvey = function (event) {
@@ -52,7 +53,8 @@ const onAddSurvey = function (event) {
   const surveyData = getFormFields(event.target)
   const admin = store.user.email
   api.addSurvey(surveyData, admin)
-    .then(console.log)
+    .then(() => onShowSurveys(event))
+    .then(appUi.surveyCreated)
     .catch(console.error)
 }
 
