@@ -13,9 +13,17 @@ const store = require('../store.js')
 // }
 
 const onUpdateSurvey = function (event) {
+  let survey
+  for (let i = 0; i < store.surveys.length; i++) {
+    if (store.surveys[i]._id === $(event.target).closest('section').data('id')) {
+      survey = store.surveys[i]
+    }
+  }
   event.preventDefault()
   const surveyData = getFormFields(event.target)
-  api.editSurvey(surveyData)
+  const id = survey._id
+  console.log(id)
+  api.editSurvey(surveyData, id)
     .then(console.log)
     .catch(console.error)
 }
@@ -47,9 +55,14 @@ const showResults = function () {
   })
 }
 
+const addHandlers = () => {
+  $('#dashboard').on('submit', '.fisto5', onUpdateSurvey)
+}
+
 module.exports = {
   onUpdateSurvey,
   onAddSurvey,
   onShowSurveys,
-  showResults
+  showResults,
+  addHandlers
 }
