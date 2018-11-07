@@ -16,8 +16,10 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
+
   $('#change-password-button, #sign-out-button, #dashboard, .dashbutton').removeClass('hidden')
   $('#sign-up-button, #sign-in-button').addClass('hidden')
+
   $('#display-message').html('').hide()
   $('#sign-in-form').trigger('reset')
   $('#display-message').css('color', 'green')
@@ -29,6 +31,7 @@ const signInFailure = function () {
   $('#display-message').text('Something went wrong, please try again').fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
+
 }
 
 const changePasswordSuccess = function (response) {
