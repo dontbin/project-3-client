@@ -1,5 +1,34 @@
 @import '~bootstrap/scss/bootstrap';
-
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps');
 .hidden {
   display: none;
 }
+.fisto5 {
+  margin: 28px;
+}
+// section {
+//     width:60%;
+//     border-radius:5px;
+//     height:200px;
+//     margin:50px 20%;
+//     position:relative;
+//     border:1px solid #eee;
+//     font: 60px 'Oleo Script Swash Caps';
+//     color:#ddd;
+//     text-shadow:1px 1px 1px #bbb;
+//     line-height:200px;
+//     text-align:center;
+//     background:white;
+//     z-index:1;
+// }
+// section:after {
+//     position:absolute;
+//     content:"";
+//     height:10px;
+//     width:85%;
+//     left:7.5%;
+//     border-radius:50%;
+//     box-shadow:0 0 14px rgba(0,0,0,0.5);
+//     bottom:0;
+//     z-index:0;
+// }

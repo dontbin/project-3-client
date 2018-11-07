@@ -1,29 +1,11 @@
 
 {{#each surveys as |survey|}}
 
-  <section class='survey_sections' data-id="{{survey._id}}">
-    <!-- <h1 data-id="{{survey._id}}">{{survey.title}}</h1> -->
-      <!--  view results-->
-      <!-- {{#each survey.response as |response|}}
-      <div class='survey-responses'>{{response.answer}}</div>
-      {{/each}} -->
-      <!-- <br> -->
-
-      <div class="container">
-    <br><br>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">{{survey.title}}</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
+  <section class='survey' data-id="{{survey._id}}">
+    <div>
+    <h2>{{survey.title}}</h2>
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">{{survey.question}}</h4>
-        </div>
+          <h4 class="">{{survey.question}}</h4>
         <form class="fisto5">
           <select name="cars">
             <option value="0">0</option>
@@ -36,13 +18,7 @@
           <br><br>
           <input type="submit">
         </form>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-        </div>
       </div>
 
-    </div>
-  </div>
-</div>
   </section>
 {{/each}}
