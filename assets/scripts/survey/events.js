@@ -1,15 +1,16 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
-//const ui = require('./ui.js')
+
+const ui = require('./ui.js')
 const store = require('../store.js')
 
 // Getting ID will depend on how surveys are displayed in UI
-const onRemoveSurvey = function (event) {
-  event.preventDefault()
-  api.removeSurvey()
-    .then(console.log)
-    .catch(console.error)
-}
+// const onRemoveSurvey = function (event) {
+//   event.preventDefault()
+//   api.removeSurvey(surveyId)
+//     .then(console.log)
+//     .catch(console.error)
+// }
 
 const onUpdateSurvey = function (event) {
   event.preventDefault()
@@ -22,7 +23,7 @@ const onUpdateSurvey = function (event) {
 const onShowSurveys = function (event) {
   event.preventDefault()
   api.showSurveys()
-    .then(console.log)
+    .then(ui.showSurveys)
     .catch(console.error)
 }
 
@@ -47,7 +48,6 @@ const showResults = function () {
 }
 
 module.exports = {
-  onRemoveSurvey,
   onUpdateSurvey,
   onAddSurvey,
   onShowSurveys,

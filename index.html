@@ -33,11 +33,11 @@
         <form id="sign-in-form" class="dropdown-menu p-4" aria-labelledby="sign-in-button">
           <div class="form-group">
             <label for="DropDownFormSignIn">Email address</label>
-            <input type="email" class="form-control"  placeholder="email@example.com">
+            <input required type="email" name="credentials[email]" placeholder="Enter Email" />
           </div>
             <div class="form-group">
               <label for="dropDownFormSignInPassword">Password</label>
-              <input type="password" class="form-control"  placeholder="Password">
+              <input required name="credentials[password]" type="password" placeholder="Enter Password" />
             </div>
               <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
@@ -49,14 +49,14 @@
       <form id=sign-up-form class="dropdown-menu p-4" aria-labelledby="sign-up-button">
         <div class="form-group">
           <label for="DropDownFormSignUp">Email address</label>
-          <input type="email" class="form-control"  placeholder="email@example.com">
+          <input required type="email" name="credentials[email]" placeholder="Enter Email"/>
         </div>
           <div class="form-group">
             <label for="dropDownFormPasswordSignUp">Password</label>
-            <input type="password" class="form-control"  placeholder="Password">
+            <input required name="credentials[password]" type="password" placeholder="Enter Password" />
             <br>
             <label for="dropDownFormPasswordSignUp">Confirm Password</label>
-            <input type="password" class="form-control"  placeholder="Password Confirmation">
+            <input required name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
           </div>
             <button type="submit" class="btn btn-primary">Sign up</button>
       </form>
@@ -71,23 +71,31 @@
           <form id="change-password-form" class="dropdown-menu p-4" aria-labelledby="change-password-button">
             <div class="form-group">
                 <label for="dropDownFormPasswordSignUp">Current Password</label>
-                <input type="password" class="form-control"  placeholder="Current Password">
+                <input required type="password" name="passwords[old]" placeholder="Enter Old Password" />
                 <br>
                 <label for="dropDownFormPasswordSignUp">New Password</label>
-                <input type="password" class="form-control"  placeholder="New Password">
+                <input required type="password" name="passwords[new]" placeholder="Enter New Password" />
               </div>
                 <button type="submit" class="btn btn-primary">Change Password</button>
           </form>
         </div>
         </li>
         <li class="nav-item active">
-          <button id='sign-out-button' class="btn btn-danger navbar-btn hidden" type="button">SIGN-UP</button>
+          <button id='sign-out-button' class="btn btn-danger navbar-btn hidden" type="button">SIGN-OUT</button>
         </li>
 
       </ul>
     </div>
     <div id="state-message" class="hidden state"></div>
   </nav>
+  <form id="add-survey-form" class="" aria-labelledby="add-survey">
+    <div class="form-group">
+        <input required type="text" name="title" placeholder="Enter Survey Title" />
+        <input required type="text" name="question" placeholder="Enter Question" />
+        <input type="submit" />
+      </div>
+  </form>
+
 </body>
 
 </html>

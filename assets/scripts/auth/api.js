@@ -10,7 +10,6 @@ const signUp = function (credentials) {
 }
 
 const signIn = function (credentials) {
-  console.log(credentials)
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
