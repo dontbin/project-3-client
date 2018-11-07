@@ -2,6 +2,10 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+const surveyApi = require('../survey/api.js')
+const surveyUi = require('../survey/ui.js')
+
+
 const onSignUp = function (event) {
   event.preventDefault()
   const credentials = getFormFields(event.target)
@@ -15,6 +19,10 @@ const onSignIn = function (event) {
   const credentials = getFormFields(event.target)
   api.signIn(credentials)
     .then(ui.signInSuccess)
+
+    .then(surveyApi.showSurveys)
+    .then(surveyUi.showSurveys)
+
     .catch(ui.signInFailure)
 }
 
