@@ -16,7 +16,7 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#change-password-button, #sign-out-button').removeClass('hidden')
+  $('#change-password-button, #sign-out-button, #dashboard').removeClass('hidden')
   $('#sign-up-button, #sign-in-button').addClass('hidden')
   $('#display-message').html('').hide()
   $('#sign-in-form').trigger('reset')
@@ -28,7 +28,7 @@ const signInFailure = function () {
   $('#display-message').html('').hide()
   $('#display-message').text('Something went wrong, please try again').fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'red')
-  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
 }
 
 const changePasswordSuccess = function (response) {
@@ -42,11 +42,12 @@ const changePasswordFailure = function () {
   $('#display-message').html('').hide()
   $('#display-message').text('Something went wrong, please try again').fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'red')
+  $('#change-password-form').trigger('reset')
 }
 
 const signOutSuccess = function () {
   store.user = null
-  $('#change-password-button, #sign-out-button').addClass('hidden')
+  $('#change-password-button, #sign-out-button #dashboard').addClass('hidden')
   $('#sign-up-button, #sign-in-button').removeClass('hidden')
   $('#display-message').html('').hide()
   $('#sign-up-form, #sign-in-form, #change-password-form').trigger('reset')
@@ -59,8 +60,6 @@ const signOutFailure = function () {
   $('#display-message').html('Something went wrong')
   $('#display-message').css('color', 'red')
 }
-
-
 
 module.exports = {
   signUpSuccess,
