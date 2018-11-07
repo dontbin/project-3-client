@@ -1,27 +1,37 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps');
+// @import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps');
+
 .hidden {
   display: none;
 }
+
 .fisto5 {
   margin: 28px;
 }
-// section {
-//     width:60%;
-//     border-radius:5px;
-//     height:200px;
-//     margin:50px 20%;
-//     position:relative;
-//     border:1px solid #eee;
-//     font: 60px 'Oleo Script Swash Caps';
-//     color:#ddd;
-//     text-shadow:1px 1px 1px #bbb;
-//     line-height:200px;
-//     text-align:center;
-//     background:white;
-//     z-index:1;
+.tensection {
+    width:60%;
+    border-radius:5px;
+    height:80px;
+    margin:30px 20%;
+    position: flex;
+    border:1px solid #eee;
+    font: 20px 'Helvetica';
+    color:#ddd;
+    padding: 10px 0 20px 20px;
+    line-height:40px;
+    // text-align:center;
+    background:white;
+    // z-index:1;
+}
+
+// .dashbutton {
+//   margin:30px 20%;
 // }
-// section:after {
+
+li {
+  margin-right: 20px;
+}
+// .tensection:after {
 //     position:absolute;
 //     content:"";
 //     height:10px;
