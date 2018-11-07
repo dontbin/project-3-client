@@ -24,7 +24,6 @@ const onUpdateSurvey = function (event) {
 }
 
 const onShowResponses = function (survey) {
-  console.log(answer)
   const responses = survey.survey.responses
   let result = 0
   responses.forEach((response) => {
