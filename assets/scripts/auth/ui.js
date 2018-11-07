@@ -60,6 +60,8 @@ const signOutFailure = function () {
   $('#display-message').css('color', 'red')
 }
 
+
+
 module.exports = {
   signUpSuccess,
   signUpFailure,

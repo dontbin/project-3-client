@@ -16,6 +16,8 @@ const onSignIn = function (event) {
   const credentials = getFormFields(event.target)
   api.signIn(credentials)
     .then(ui.signInSuccess)
+    .then(api.showSurveys)
+    .then(ui.fillSurveyDropdown)
     .catch(ui.signInFailure)
 }
 
