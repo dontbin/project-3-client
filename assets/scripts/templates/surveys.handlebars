@@ -1,8 +1,8 @@
 
 {{#each surveys as |survey|}}
 
-  <section class='survey' data-id="{{survey._id}}">
-    <div>
+  <section class='survey'  data-id="{{survey._id}}">
+    <div id="questionaire-{{survey._id}}">
     <h2>{{survey.title}}</h2>
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           <h4 class="">{{survey.question}}</h4>
@@ -19,6 +19,8 @@
           <input type="submit">
         </form>
       </div>
+
+      <div id="responses-{{survey._id}}" class="hidden"></div>
 
   </section>
 {{/each}}

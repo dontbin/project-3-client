@@ -24,8 +24,20 @@ const onUpdateSurvey = function (event) {
   const id = survey._id
   console.log(id)
   api.editSurvey(surveyData, id)
-    .then(console.log)
+    .then(onShowResponses)
     .catch(console.error)
+}
+
+const onShowResponses = function (survey) {
+  console.log(survey)
+  let result = 0
+  survey.responses.forEach((response) => {
+    result += response.answer
+  })
+  const average = result / survey.responses.length
+  $(`#questionaire-${survey._id}`).addClass('hidden')
+  $(`#response-${survey._id}`).removeClass('hidden')
+  $(`#response-${survey._id}`).html(average)
 }
 
 const onShowSurveys = function (event) {
