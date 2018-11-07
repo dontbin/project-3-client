@@ -22,6 +22,7 @@ const removeSurvey = function (surveyId) {
 }
 
 const editSurvey = function (surveyData, id) {
+  console.log(surveyData)
   return $.ajax({
     url: config.apiUrl + '/surveys/' + id,
     method: 'PATCH',
@@ -33,8 +34,8 @@ const editSurvey = function (surveyData, id) {
         'title': surveyData.title,
         'question': surveyData.question,
         'admin': store.user.email,
-        'response': {
-          'answer': surveyData.Response.question
+        'responses': {
+          'answer': surveyData.question
         }
       }
     }
