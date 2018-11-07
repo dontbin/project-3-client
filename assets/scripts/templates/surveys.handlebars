@@ -2,10 +2,11 @@
 {{#each surveys as |survey|}}
 
   <section class='survey'  data-id="{{survey._id}}">
-    <div id="questionaire-{{survey._id}}">
     <h2>{{survey.title}}</h2>
+    <h4 class="">{{survey.question}}</h4>
+    <div id="questionaire-{{survey._id}}">
+
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="">{{survey.question}}</h4>
         <form class="fisto5">
           <select name="question">
             <option value="0">0</option>

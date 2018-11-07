@@ -29,15 +29,15 @@ const onUpdateSurvey = function (event) {
 }
 
 const onShowResponses = function (survey) {
-  console.log(survey)
+  const responses = survey.survey.responses
   let result = 0
-  survey.responses.forEach((response) => {
+  responses.forEach((response) => {
     result += response.answer
   })
-  const average = result / survey.responses.length
-  $(`#questionaire-${survey._id}`).addClass('hidden')
-  $(`#response-${survey._id}`).removeClass('hidden')
-  $(`#response-${survey._id}`).html(average)
+  const average = result / responses.length
+  $(`#questionaire-${survey.survey._id}`).addClass('hidden')
+  $(`#responses-${survey.survey._id}`).removeClass('hidden')
+  $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
 }
 
 const onShowSurveys = function (event) {
