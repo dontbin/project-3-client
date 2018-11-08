@@ -1,10 +1,27 @@
 
+
 {{#each surveys as |survey|}}
 
-  <section class='owner-survey' data-id="{{survey._id}}">
-    <h2>{{survey.title}}</h2>
-    <h4 id="results-{{survey._id}}"></h4>
-    <button type='submit' class="remove_button col btn btn-primary">Delete this survey</button>
-    <hr>
+  <section class='owner-survey'  data-id="{{survey._id}}">
+
+
+    <!-- Flipping modal -->
+    <div class="widget-box sample-widget">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <h2>{{survey.title}}</h2>
+          </div>
+          <div class="flip-box-back">
+            <h2>{{survey.question}}</h2>
+            <div id="results-{{survey._id}}"></div>
+            <canvas id="myChart-{{survey._id}}" class="myChart"></canvas>
+            <button type='submit' class="remove_button btn btn-success">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </section>
 {{/each}}
