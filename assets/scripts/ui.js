@@ -8,8 +8,8 @@ const switchToCreateSurvey = function (event) {
 
 const surveyCreated = function () {
   $('#add-survey-form').trigger('reset')
-  $('#dashboard').removeClass('hidden')
-  $('#create-survey-form').addClass('hidden')
+  $('#dashboard, #dashboard-btn').removeClass('hidden')
+  $('#create-survey-form, #view-surveys-btn').addClass('hidden')
 }
 
 const viewAllSurveys = function () {

@@ -21,6 +21,7 @@ const onUpdateSurvey = function (event) {
   const id = survey._id
   api.editSurvey(surveyData, id)
     .then(onShowResponses)
+    .then(survey.responses.push({'answer': parseInt(surveyData.question, 10)}))
     .catch(console.error)
 }
 
@@ -64,6 +65,8 @@ const showResults = function (survey) {
 }
 
 const showOwnerSurveys = function () {
+  // api.showSurveys()
+  // ui.showSurveys()
   const ownerSurveys = []
   store.surveys.forEach(survey => {
     if (survey.owner === store.user._id) {
@@ -82,7 +85,11 @@ const showOwnerSurveys = function () {
         result += response.answer
       })
       const average = result / survey.responses.length
-      $(`#results-${survey._id}`).html('Average result is: ' + average)
+      if (survey.responses.length === 0) {
+        $(`#results-${survey._id}`).html('No one has taken your survey yet!')
+      } else {
+        $(`#results-${survey._id}`).html('Average result is: ' + average)
+      }
     })
   }
 }
