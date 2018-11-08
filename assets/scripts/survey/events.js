@@ -71,9 +71,14 @@ const showOwnerSurveys = function () {
       ownerSurveys.push(survey)
     }
   })
-  const ownerSurveysHtml = ownerSurveysTemplate({ surveys: ownerSurveys })
-  $('#owner-surveys-display').html('')
-  $('#owner-surveys-display').html(ownerSurveysHtml)
+  if (ownerSurveys.length === 0) {
+    $('#owner-surveys-display').html('You own zero surveys. Click below to create one!')
+  } else {
+    $('#owner-surveys-display').html('')
+    const ownerSurveysHtml = ownerSurveysTemplate({ surveys: ownerSurveys })
+    // $('#owner-surveys-display').html('')
+    $('#owner-surveys-display').html(ownerSurveysHtml)
+  }
 }
 
 const onDeleteSurvey = function (event) {

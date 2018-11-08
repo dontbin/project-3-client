@@ -30,7 +30,6 @@ const signInFailure = function () {
   $('#display-message').text('Something went wrong, please try again').fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
-
 }
 
 const changePasswordSuccess = function (response) {
