@@ -31,14 +31,28 @@
 li {
   margin-right: 20px;
 }
-// .tensection:after {
-//     position:absolute;
-//     content:"";
-//     height:10px;
-//     width:85%;
-//     left:7.5%;
-//     border-radius:50%;
-//     box-shadow:0 0 14px rgba(0,0,0,0.5);
-//     bottom:0;
-//     z-index:0;
-// }
+.widget-box {
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  float: left;
+  width: 100%;
+  margin: 0 0 15px 15px;
+}
+.widget-header {
+  background: #279BE4;
+}
+.widget-header h2 {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+  padding: 11px 15px;
+  color: #F9F9F9;
+  display: inline-block;
+}
+.sample-widget {max-width: 47%;}
+.widget-box .fa-cog {
+  float: right;
+  color: #fff;
+  margin: 11px 11px 0 0;
+  font-size: 20px;
+}
