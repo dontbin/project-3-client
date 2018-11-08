@@ -31,7 +31,7 @@ const onShowResponses = function (survey) {
   responses.forEach((response) => {
     result += response.answer
   })
-  const average = result / responses.length
+  const average = Math.round(100 * (result / responses.length)) / 100
   $(`#questionaire-${survey.survey._id}, #submit-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
   $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
@@ -84,7 +84,7 @@ const showOwnerSurveys = function () {
       survey.responses.forEach((response) => {
         result += response.answer
       })
-      const average = result / survey.responses.length
+      const average = Math.round(100 * (result / survey.responses.length)) / 100
       if (survey.responses.length === 0) {
         $(`#results-${survey._id}`).html('No one has taken your survey yet!')
       } else {
