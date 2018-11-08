@@ -54,6 +54,8 @@ const signOutSuccess = function () {
   $('#sign-up-form, #sign-in-form, #change-password-form').trigger('reset')
   $('#display-message').text(`You have signed out`).fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'green')
+  $('#create-survey-form').addClass('hidden')
+  $('#add-survey-form').trigger('reset')
 }
 
 const signOutFailure = function () {
