@@ -1,6 +1,8 @@
 
 {{#each surveys as |survey|}}
 
+
+
   <section class='survey'  data-id="{{survey._id}}">
       <!-- New dashboard -->
     <div class="content">
@@ -29,6 +31,7 @@
             </form>
             </div>
             <div id="responses-{{survey._id}}" class="hidden"></div>
+            <canvas id="myChart-{{survey._id}}"></canvas>
           </div>
         </div>
       </div>

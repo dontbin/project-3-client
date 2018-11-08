@@ -1,5 +1,6 @@
 const store = require('../store.js')
 
+
 const signUpSuccess = function (response) {
   $('#display-message').html('').hide()
   $('#sign-up-form').trigger('reset')
@@ -23,6 +24,9 @@ const signInSuccess = function (response) {
   $('#sign-in-form').trigger('reset')
   $('#display-message').css('color', 'green')
   $('#display-message').text(`Welcome, ${store.user.email}`).fadeToggle().delay(1000).fadeToggle()
+
+
+
 }
 
 const signInFailure = function () {
