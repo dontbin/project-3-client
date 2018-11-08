@@ -5,7 +5,7 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 const appUi = require('../ui.js')
 const ownerSurveysTemplate = require('../templates/owner-surveys.handlebars')
-
+const Chart = require('chart.js')
 // let answer
 
 const onUpdateSurvey = function (event) {
@@ -28,13 +28,78 @@ const onUpdateSurvey = function (event) {
 const onShowResponses = function (survey) {
   const responses = survey.survey.responses
   let result = 0
+
+  let zero = 0
+  let one = 0
+  let two = 0
+  let three = 0
+  let four = 0
+  let five = 0
   responses.forEach((response) => {
     result += response.answer
+    switch (response.answer) {
+      case 0:
+        zero += 1
+        break
+      case 1:
+        one += 1
+        break
+      case 2:
+        two += 1
+        break
+      case 3:
+        three += 1
+        break
+      case 4:
+        four += 1
+        break
+      case 5:
+        five += 1
+        break
+    }
   })
-  const average = result / responses.length
+  const barData = [zero, one, two, three, four, five]
+  const average = Math.round(100 * (result / responses.length)) / 100
   $(`#questionaire-${survey.survey._id}, #submit-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
   $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
+  const ctx = $(`#myChart-${survey.survey._id}`)
+  const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['0', '1', '2', '3', '4', '5'],
+      datasets: [{
+        label: 'Fist to five',
+        data: barData,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  })
 }
 
 const onShowSurveys = function (event) {
@@ -81,14 +146,80 @@ const showOwnerSurveys = function () {
     // loop through owner surveys
     ownerSurveys.forEach((survey) => {
       let result = 0
+      let zero = 0
+      let one = 0
+      let two = 0
+      let three = 0
+      let four = 0
+      let five = 0
       survey.responses.forEach((response) => {
         result += response.answer
+        switch (response.answer) {
+          case 0:
+            zero += 1
+            break
+          case 1:
+            one += 1
+            break
+          case 2:
+            two += 1
+            break
+          case 3:
+            three += 1
+            break
+          case 4:
+            four += 1
+            break
+          case 5:
+            five += 1
+            break
+        }
       })
-      const average = result / survey.responses.length
+      const barData = [zero, one, two, three, four, five]
+      const average = Math.round(100 * (result / survey.responses.length)) / 100
       if (survey.responses.length === 0) {
         $(`#results-${survey._id}`).html('No one has taken your survey yet!')
       } else {
         $(`#results-${survey._id}`).html('Average result is: ' + average)
+        const ctx = $(`#myChart-${survey._id}`)
+        const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['0', '1', '2', '3', '4', '5'],
+            datasets: [{
+              label: 'Fist to five',
+              data: barData,
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1,
+              hoverBorderWidth: 3,
+              hoverBorderColor: '#000'
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        })
       }
     })
   }
