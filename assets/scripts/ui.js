@@ -2,8 +2,8 @@
 
 const switchToCreateSurvey = function (event) {
   event.preventDefault()
-  $('#dashboard').addClass('hidden')
-  $('#create-survey-form').removeClass('hidden')
+  $('#dashboard, #dashboard-btn').addClass('hidden')
+  $('#create-survey-form, #view-surveys-btn').removeClass('hidden')
 }
 
 const surveyCreated = function () {
@@ -12,7 +12,14 @@ const surveyCreated = function () {
   $('#create-survey-form').addClass('hidden')
 }
 
+const viewAllSurveys = function () {
+  $('#add-survey-form').trigger('reset')
+  $('#dashboard, #dashboard-btn').removeClass('hidden')
+  $('#create-survey-form, #view-surveys-btn').addClass('hidden')
+}
+
 module.exports = {
   switchToCreateSurvey,
-  surveyCreated
+  surveyCreated,
+  viewAllSurveys
 }

@@ -21,5 +21,6 @@ $(() => {
   $('#add-survey-form').on('submit', survey.onAddSurvey)
 
   $('.create-button').on('click', ui.switchToCreateSurvey)
+  $('#view-button').on('click', ui.viewAllSurveys)
   survey.addHandlers()
 })
