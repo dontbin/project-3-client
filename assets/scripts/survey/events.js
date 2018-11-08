@@ -38,7 +38,6 @@ const onShowResponses = function (survey) {
 }
 
 const onShowSurveys = function (event) {
-  event.preventDefault()
   api.showSurveys()
     .then(ui.showSurveys)
     .catch(console.error)
@@ -65,8 +64,7 @@ const showResults = function (survey) {
   })
 }
 
-const showOwnerSurveys = function (event) {
-  event.preventDefault()
+const showOwnerSurveys = function () {
   const ownerSurveys = []
   store.surveys.forEach(survey => {
     if (survey.owner === store.user._id) {
@@ -82,8 +80,9 @@ const onDeleteSurvey = function (event) {
   event.preventDefault()
   const surveyId = $(event.target).closest('section').data('id')
   api.removeSurvey(surveyId)
-    .then(() => onShowSurveys(event))
-    .then(() => showOwnerSurveys(event))
+    .then(api.showSurveys)
+    .then(ui.showSurveys)
+    .then(showOwnerSurveys)
     .catch()
 }
 
