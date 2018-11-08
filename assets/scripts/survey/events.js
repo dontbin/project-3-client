@@ -32,7 +32,7 @@ const onShowResponses = function (survey) {
   })
   // result += answer
   const average = result / responses.length
-  $(`#questionaire-${survey.survey._id}`).addClass('hidden')
+  $(`#questionaire-${survey.survey._id}, #submit-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
   $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
 }

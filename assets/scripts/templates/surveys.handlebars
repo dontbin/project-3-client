@@ -2,49 +2,36 @@
 {{#each surveys as |survey|}}
 
   <section class='survey'  data-id="{{survey._id}}">
+      <!-- New dashboard -->
+    <div class="content">
 
-
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-        <!-- <form class="fisto5">
-          <select name="question">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <br><br>
-          <input type="submit">
-        </form>
-      </div> -->
-
-      <div class="content">
+      <!-- Flipping modal -->
     <div class="widget-box sample-widget">
-      <h2>{{survey.title}}</h2>
-      <div id="questionaire-{{survey._id}}">
-      <div class="widget-header">
-        <h2>{{survey.question}}</h2>
-        <i class="fa fa-cog"></i>
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <h2>{{survey.title}}</h2>
+          </div>
+          <div class="flip-box-back">
+            <h2>{{survey.question}}</h2>
+            <div id="submit-{{survey._id}}">
+            <form class="fisto5">
+              <select name="question">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <br><br>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            </div>
+            <div id="responses-{{survey._id}}" class="hidden"></div>
+          </div>
+        </div>
       </div>
-      <div class="widget-content">
-
-        <form class="fisto5">
-          <select name="question">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <br><br>
-          <input type="submit">
-        </form>
-      </div>
-    </div>
-
-      <h3 id="responses-{{survey._id}}" class="hidden"></h3>
     </div>
   </div>
 
