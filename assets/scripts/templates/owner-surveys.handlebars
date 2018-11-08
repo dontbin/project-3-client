@@ -1,0 +1,10 @@
+
+{{#each surveys as |survey|}}
+
+  <section class='owner-survey' data-id="{{survey._id}}">
+    <h2>{{survey.title}}</h2>
+    <h4 id="results-{{survey._id}}"></h4>
+    <button type='submit' class="remove_button col btn btn-primary">Delete this survey</button>
+    <hr>
+  </section>
+{{/each}}

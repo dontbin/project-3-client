@@ -16,8 +16,7 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-
-  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton').removeClass('hidden')
+  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton, #owner-surveys').removeClass('hidden')
   $('#sign-up-button, #sign-in-button').addClass('hidden')
 
   $('#display-message').html('').hide()
@@ -31,7 +30,6 @@ const signInFailure = function () {
   $('#display-message').text('Something went wrong, please try again').fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
-
 }
 
 const changePasswordSuccess = function (response) {
@@ -50,12 +48,14 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   store.user = null
-  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton').addClass('hidden')
+  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton, #owner-surveys').addClass('hidden')
   $('#sign-up-button, #sign-in-button').removeClass('hidden')
   $('#display-message').html('').hide()
   $('#sign-up-form, #sign-in-form, #change-password-form').trigger('reset')
   $('#display-message').text(`You have signed out`).fadeToggle().delay(1000).fadeToggle()
   $('#display-message').css('color', 'green')
+  $('#create-survey-form, #view-surveys-btn, #dashboard-btn').addClass('hidden')
+  $('#add-survey-form').trigger('reset')
 }
 
 const signOutFailure = function () {

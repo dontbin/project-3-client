@@ -4,6 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 const appUi = require('../ui.js')
+const ownerSurveysTemplate = require('../templates/owner-surveys.handlebars')
 
 // let answer
 
@@ -20,6 +21,7 @@ const onUpdateSurvey = function (event) {
   const id = survey._id
   api.editSurvey(surveyData, id)
     .then(onShowResponses)
+    .then(survey.responses.push({'answer': parseInt(surveyData.question, 10)}))
     .catch(console.error)
 }
 
@@ -29,15 +31,13 @@ const onShowResponses = function (survey) {
   responses.forEach((response) => {
     result += response.answer
   })
-  // result += answer
   const average = result / responses.length
-  $(`#questionaire-${survey.survey._id}`).addClass('hidden')
+  $(`#questionaire-${survey.survey._id}, #submit-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
   $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
 }
 
 const onShowSurveys = function (event) {
-  event.preventDefault()
   api.showSurveys()
     .then(ui.showSurveys)
     .catch(console.error)
@@ -64,8 +64,50 @@ const showResults = function (survey) {
   })
 }
 
+const showOwnerSurveys = function () {
+  // api.showSurveys()
+  // ui.showSurveys()
+  const ownerSurveys = []
+  store.surveys.forEach(survey => {
+    if (survey.owner === store.user._id) {
+      ownerSurveys.push(survey)
+    }
+  })
+  if (ownerSurveys.length === 0) {
+    $('#owner-surveys-display').html('You own zero surveys. Click below to create one!')
+  } else {
+    const ownerSurveysHtml = ownerSurveysTemplate({ surveys: ownerSurveys })
+    $('#owner-surveys-display').html(ownerSurveysHtml)
+    // loop through owner surveys
+    ownerSurveys.forEach((survey) => {
+      let result = 0
+      survey.responses.forEach((response) => {
+        result += response.answer
+      })
+      const average = result / survey.responses.length
+      if (survey.responses.length === 0) {
+        $(`#results-${survey._id}`).html('No one has taken your survey yet!')
+      } else {
+        $(`#results-${survey._id}`).html('Average result is: ' + average)
+      }
+    })
+  }
+}
+
+const onDeleteSurvey = function (event) {
+  event.preventDefault()
+  const surveyId = $(event.target).closest('section').data('id')
+  api.removeSurvey(surveyId)
+    .then(api.showSurveys)
+    .then(ui.showSurveys)
+    .then(showOwnerSurveys)
+    .catch()
+}
+
 const addHandlers = () => {
   $('#dashboard').on('submit', '.fisto5', onUpdateSurvey)
+  $('#delete-surveys-btn').on('click', showOwnerSurveys)
+  $('#owner-surveys-display').on('click', '.remove_button', onDeleteSurvey)
 }
 
 module.exports = {
@@ -73,5 +115,7 @@ module.exports = {
   onAddSurvey,
   onShowSurveys,
   showResults,
-  addHandlers
+  addHandlers,
+  showOwnerSurveys,
+  onDeleteSurvey
 }
