@@ -102,7 +102,7 @@ li {
 .flip-box-front, .flip-box-back {
   position: absolute;
   width: 100%;
-  height: auto;
+  // height: auto;
   backface-visibility: hidden;
   border-radius: 20px;
 }
@@ -117,6 +117,7 @@ li {
   background-color: #96b38a;
   color: white;
   transform: rotateY(180deg);
+  height: 100%;
 }
 
 .owner-surveys-display {
