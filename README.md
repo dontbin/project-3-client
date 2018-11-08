@@ -1,113 +1,49 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# _Fist 2 5
 
-# browser-template
+An SPA that allows users to create and respond to custom-made surveys. Surveys are limited to one question with responses ranging from 0-5. Users can view all surveys that have been created. Owners of surveys can view individual survey results, and delete surveys.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+[Deployed User Site](https://dontbin.github.io/project-3-client/)
+[Client Repo](https://github.com/dontbin/project-3-client)
 
-## Installation
+API
+* [Deployed API](https://pure-citadel-23065.herokuapp.com/)
+* [API Repo](https://pure-citadel-23065.herokuapp.com/)
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
 
-## Structure
+## Technologies Used
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+* HTML5
+* CSS3
+* jQuery
+* Bootstrap
+* Handlebars
+* AJAX requests
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+## Unsolved Problems
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+Future iterations would include more variety in terms of the types and numbers of questions users can create.
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+We'd also like to make the app more user-friendly by adding search functionality, better visual representation of survey results, and a feature that would host each survey at its own unique URL.
 
-## Adding Images
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
+## Development Stories
 
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
+This was our first project working as a team, which presented plenty of growth opportunities throughout the entire development process.
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
+### Planning
 
-## Adding Fonts
+We spent the evening before the project creating wireframes, ERDs, and user stories. The first morning of the project we discussed the all three planning elements, confirmed they were good, and went to work.
 
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
+* [User Stories](https://docs.google.com/document/d/1cib-uwQz-n_Xb5QIp5fiFo2II8TRteTn2jn1tkcCpPI/edit)
+* [Wireframe](https://imgur.com/4m5AjYc)
 
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
+### Process & Problem-Solving
 
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
+We started out with two of us building the back end API while the other half of the team built the front end framework. We quickly hit our first bump in the road after we decided to change the relationship between the survey and response resources. We were only able to solve this problem after all four of us programmed off of one screen.
 
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
+Seeing that we could get over problems more effectively as a full team, we spent much of the first two days working as a team to meet our technical requirements. We frequently referred back to the requirements and user stories in order to stay on track.
 
-## Tasks
+By the start of Day 3, the final day of the project, we were ready to add more visual design and make minor tweaks to improve a user's experience. During this process we worked in pairs or alone. By this point we'd developed a comfort for the team development workflow.
 
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+Working as a team was probably the biggest challenge we'd faced throughout the project. We may have been able to write more code if all of us worked independently of in pairs, but putting all of the code together into a cohesive unit would have been difficult. 
