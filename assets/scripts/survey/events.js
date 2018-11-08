@@ -17,11 +17,11 @@ const onUpdateSurvey = function (event) {
   }
   event.preventDefault()
   const surveyData = getFormFields(event.target)
+  console.log(surveyData)
   // answer = surveyData.question
   const id = survey._id
   api.editSurvey(surveyData, id)
     .then(onShowResponses)
-    .then(survey.responses.push({'answer': parseInt(surveyData.question, 10)}))
     .catch(console.error)
 }
 
@@ -31,7 +31,8 @@ const onShowResponses = function (survey) {
   responses.forEach((response) => {
     result += response.answer
   })
-  const average = Math.round(100 * (result / responses.length)) / 100
+  // result += answer
+  const average = result / responses.length
   $(`#questionaire-${survey.survey._id}, #submit-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
   $(`#responses-${survey.survey._id}`).html('average result is: ' + average)
@@ -65,8 +66,6 @@ const showResults = function (survey) {
 }
 
 const showOwnerSurveys = function () {
-  // api.showSurveys()
-  // ui.showSurveys()
   const ownerSurveys = []
   store.surveys.forEach(survey => {
     if (survey.owner === store.user._id) {
@@ -76,21 +75,10 @@ const showOwnerSurveys = function () {
   if (ownerSurveys.length === 0) {
     $('#owner-surveys-display').html('You own zero surveys. Click below to create one!')
   } else {
+    $('#owner-surveys-display').html('')
     const ownerSurveysHtml = ownerSurveysTemplate({ surveys: ownerSurveys })
+    // $('#owner-surveys-display').html('')
     $('#owner-surveys-display').html(ownerSurveysHtml)
-    // loop through owner surveys
-    ownerSurveys.forEach((survey) => {
-      let result = 0
-      survey.responses.forEach((response) => {
-        result += response.answer
-      })
-      const average = Math.round(100 * (result / survey.responses.length)) / 100
-      if (survey.responses.length === 0) {
-        $(`#results-${survey._id}`).html('No one has taken your survey yet!')
-      } else {
-        $(`#results-${survey._id}`).html('Average result is: ' + average)
-      }
-    })
   }
 }
 

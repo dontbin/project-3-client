@@ -15,18 +15,58 @@
           <div class="flip-box-back">
             <h2>{{survey.question}}</h2>
             <div id="submit-{{survey._id}}">
-            <form class="fisto5">
-              <select name="question">
+            <!-- <form class="fisto5"> -->
+              <!-- <select name="question">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-              </select>
+              </select> -->
+              <!-- <div class="numeric-ranking">
+                <input type="radio" value="0">
+              </div>
+              <div class="numeric-ranking">
+                <input type="radio" value="1">
+              </div>
               <br><br>
               <button type="submit" class="btn btn-success">Submit</button>
+            </form> -->
+
+            <form class="fisto5">
+              <div class="form-row">
+                <div class="col">
+                  <img src="assets/images/zero.png" width="70%">
+                  <input name="question" type="radio" class="form-control" value="0">
+                </div>
+                <div class="col">
+                  <img src="assets/images/one.png" width="70%">
+                  <input name="question" type="radio" class="form-control"  value="1">
+                </div>
+                <div class="col">
+                  <img src="assets/images/two.png" width="70%">
+                  <input name="question" type="radio" class="form-control" value="2">
+                </div>
+
+                <div class="col">
+                  <img src="assets/images/three.png" width="70%">
+                  <input name="question" type="radio" class="form-control" value="3">
+                </div>
+                <div class="col">
+                  <img src="assets/images/four.png" width="70%">
+                  <input name="question" type="radio" class="form-control" value="4">
+                </div>
+                <div class="col">
+                  <img src="assets/images/five.png" width="70%">
+                  <input name="question" type="radio" class="form-control" value="5">
+                </div>
+              </div>
+
+              <br>
+              <button type="submit" class="btn btn-success">Submit</button>
             </form>
+
             </div>
             <div id="responses-{{survey._id}}" class="hidden"></div>
           </div>
