@@ -4,6 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 const appUi = require('../ui.js')
+const ownerSurveysTemplate = require('../templates/owner-surveys.handlebars')
 
 // let answer
 
@@ -48,8 +49,8 @@ const onAddSurvey = function (event) {
   const surveyData = getFormFields(event.target)
   const admin = store.user.email
   api.addSurvey(surveyData, admin)
-    .then(appUi.surveyCreated)
     .then(() => onShowSurveys(event))
+    .then(appUi.surveyCreated)
     .catch(console.error)
 }
 
@@ -64,8 +65,32 @@ const showResults = function (survey) {
   })
 }
 
+const showOwnerSurveys = function (event) {
+  event.preventDefault()
+  const ownerSurveys = []
+  store.surveys.forEach(survey => {
+    if (survey.owner === store.user._id) {
+      ownerSurveys.push(survey)
+    }
+  })
+  const ownerSurveysHtml = ownerSurveysTemplate({ surveys: ownerSurveys })
+  $('#owner-surveys-display').html('')
+  $('#owner-surveys-display').html(ownerSurveysHtml)
+}
+
+const onDeleteSurvey = function (event) {
+  event.preventDefault()
+  const surveyId = $(event.target).closest('section').data('id')
+  api.removeSurvey(surveyId)
+    .then(() => onShowSurveys(event))
+    .then(() => showOwnerSurveys(event))
+    .catch()
+}
+
 const addHandlers = () => {
   $('#dashboard').on('submit', '.fisto5', onUpdateSurvey)
+  $('#delete-surveys-btn').on('click', showOwnerSurveys)
+  $('#owner-surveys-display').on('click', '.remove_button', onDeleteSurvey)
 }
 
 module.exports = {
@@ -73,5 +98,7 @@ module.exports = {
   onAddSurvey,
   onShowSurveys,
   showResults,
-  addHandlers
+  addHandlers,
+  showOwnerSurveys,
+  onDeleteSurvey
 }

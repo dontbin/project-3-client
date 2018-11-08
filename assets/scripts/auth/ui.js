@@ -16,8 +16,7 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-
-  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton').removeClass('hidden')
+  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton, #owner-surveys').removeClass('hidden')
   $('#sign-up-button, #sign-in-button').addClass('hidden')
 
   $('#display-message').html('').hide()
@@ -50,7 +49,7 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   store.user = null
-  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton').addClass('hidden')
+  $('#change-password-button, #sign-out-button, #dashboard, .dashbutton, #owner-surveys').addClass('hidden')
   $('#sign-up-button, #sign-in-button').removeClass('hidden')
   $('#display-message').html('').hide()
   $('#sign-up-form, #sign-in-form, #change-password-form').trigger('reset')
