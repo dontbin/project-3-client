@@ -30,7 +30,6 @@ const onShowResponses = function (survey) {
   responses.forEach((response) => {
     result += response.answer
   })
-  // result += answer
   const average = result / responses.length
   $(`#questionaire-${survey.survey._id}, #submit-${survey.survey._id}`).addClass('hidden')
   $(`#responses-${survey.survey._id}`).removeClass('hidden')
@@ -74,10 +73,17 @@ const showOwnerSurveys = function () {
   if (ownerSurveys.length === 0) {
     $('#owner-surveys-display').html('You own zero surveys. Click below to create one!')
   } else {
-    $('#owner-surveys-display').html('')
     const ownerSurveysHtml = ownerSurveysTemplate({ surveys: ownerSurveys })
-    // $('#owner-surveys-display').html('')
     $('#owner-surveys-display').html(ownerSurveysHtml)
+    // loop through owner surveys
+    ownerSurveys.forEach((survey) => {
+      let result = 0
+      survey.responses.forEach((response) => {
+        result += response.answer
+      })
+      const average = result / survey.responses.length
+      $(`#results-${survey._id}`).html('Average result is: ' + average)
+    })
   }
 }
 
