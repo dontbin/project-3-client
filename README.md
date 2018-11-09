@@ -2,12 +2,12 @@
 
 An SPA that allows users to create and respond to custom-made surveys. Surveys are limited to one question with responses ranging from 0-5. Users can view all surveys that have been created. Owners of surveys can view individual survey results, and delete surveys.
 
-[Deployed User Site](https://dontbin.github.io/project-3-client/)
-[Client Repo](https://github.com/dontbin/project-3-client)
+* [Deployed User Site](https://dontbin.github.io/project-3-client/)
+* [Client Repo](https://github.com/dontbin/project-3-client)
 
 API
 * [Deployed API](https://pure-citadel-23065.herokuapp.com/)
-* [API Repo](https://pure-citadel-23065.herokuapp.com/)
+* [API Repo](https://github.com/dontbin/project-3-api)
 
 
 ## Technologies Used
@@ -46,4 +46,4 @@ Seeing that we could get over problems more effectively as a full team, we spent
 
 By the start of Day 3, the final day of the project, we were ready to add more visual design and make minor tweaks to improve a user's experience. During this process we worked in pairs or alone. By this point we'd developed a comfort for the team development workflow.
 
-Working as a team was probably the biggest challenge we'd faced throughout the project. We may have been able to write more code if all of us worked independently of in pairs, but putting all of the code together into a cohesive unit would have been difficult. 
+Working as a team was probably the biggest challenge we'd faced throughout the project. We may have been able to write more code if all of us worked independently of in pairs, but putting all of the code together into a cohesive unit would have been difficult.

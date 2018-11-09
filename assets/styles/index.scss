@@ -13,6 +13,42 @@ h2 {
   padding-top: 20px;
   font-family: 'Palatino';
 }
+
+// Sign-In, Sign-Up & Change Password Password CSS
+.sign-in-form {
+  margin-left: 16%;
+  margin-top: 10px;
+  border: 1px solid #28a745;
+  border-radius: 20px;
+}
+
+.sign-up-form {
+  margin-left: 24%;
+  margin-top: 10px;
+  border: 1px solid #ffc107;
+  border-radius: 20px;
+}
+
+.change-password-form {
+  margin-left: 22%;
+  margin-top: 10px;
+  border: 1px solid #ffc107;
+  border-radius: 20px;
+}
+
+.create-survey-question {
+  margin-left: 22%;
+  margin-top: 10px;
+  border: 1px solid #28a745;
+  border-radius: 20px;
+  width: 500px;
+  height: 184px;
+  padding: 20px;
+  margin-left: 34%;
+}
+
+// End of Sign-In, Sign-Up & Change Password Password CSS
+
 .tensection {
     width:60%;
     border-radius:5px;
@@ -111,6 +147,11 @@ li {
   background-color: lightblue;
   color: black;
   height: 100%;
+}
+
+.flip-box-front > h2 {
+  margin-top: 50px;
+  font-family: Helvetica;
 }
 
 .flip-box-back {
