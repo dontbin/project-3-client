@@ -36,6 +36,17 @@ h2 {
   border-radius: 20px;
 }
 
+.create-survey-question {
+  margin-left: 22%;
+  margin-top: 10px;
+  border: 1px solid #28a745;
+  border-radius: 20px;
+  width: 500px;
+  height: 184px;
+  padding: 20px;
+  margin-left: 34%;
+}
+
 // End of Sign-In, Sign-Up & Change Password Password CSS
 
 .tensection {
@@ -136,6 +147,11 @@ li {
   background-color: lightblue;
   color: black;
   height: 100%;
+}
+
+.flip-box-front > h2 {
+  margin-top: 50px;
+  font-family: Helvetica;
 }
 
 .flip-box-back {
