@@ -13,10 +13,10 @@
             <h2>{{survey.title}}</h2>
           </div>
           <div class="flip-box-back">
-            <h2>{{survey.question}}</h2>
+            <button type='submit' class="remove_button btn btn-danger">Delete</button>
+            <h4>{{survey.question}}</h4>
             <div id="results-{{survey._id}}"></div>
             <canvas id="myChart-{{survey._id}}" class="myChart"></canvas>
-            <button type='submit' class="remove_button btn btn-success">Delete</button>
           </div>
         </div>
       </div>
