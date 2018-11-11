@@ -5,7 +5,6 @@ const ui = require('./ui.js')
 const surveyApi = require('../survey/api.js')
 const surveyUi = require('../survey/ui.js')
 
-
 const onSignUp = function (event) {
   event.preventDefault()
   const credentials = getFormFields(event.target)
