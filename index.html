@@ -24,8 +24,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <div class="sign-in-dropdown">
-          <button id='sign-in-button' class="btn btn-success navbar-btn dropdown-toggle sign-in-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOG IN</button>
+        <div class="sign-in">
+          <button id='sign-in-button' class="btn btn-success navbar-btn sign-in-button" type="button" data-toggle="collapse" data-target="#sign-in-form" aria-controls="sign-in-form" aria-expanded="false">LOG IN</button>
 
         <!-- <form id="sign-in-form" class="dropdown-menu p-4" aria-labelledby="sign-in-button">
           <div class="form-group">
@@ -38,9 +38,9 @@
             </div>
               <button type="submit" class="btn btn-primary">Sign in</button>
         </form> -->
-
+      </div>
         <!-- New Login Start -->
-        <form id="sign-in-form" class="dropdown-menu p-4 sign-in-form" aria-labelledby="sign-in-button">
+        <form id="sign-in-form" class="collapse sign-in-form" aria-labelledby="sign-in-button">
           <div class="form-group">
             <input required type="email" name="credentials[email]" placeholder="Enter Email" class="form-control"/>
           </div>
@@ -50,13 +50,13 @@
           <button type="submit" class="btn btn-success">Sign in</button>
         </form>
         <!-- New Login End -->
-      </div>
+
     </li>
 
     <li class="nav-item active">
-      <div class="sign-up-dropdown">
-        <button id='sign-up-button' class="btn btn-warning navbar-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN-UP</button>
+      <div class="sign-up">
 
+        <button id='sign-up-button' class="btn btn-warning navbar-btn" type="button" data-toggle="collapse" data-target="#sign-up-form" aria-controls="sign-up-form" aria-expanded="false">SIGN-UP</button>
         <!-- <form id=sign-up-form class="dropdown-menu p-4" aria-labelledby="sign-up-button">
           <div class="form-group">
             <label for="DropDownFormSignUp">Email address</label>
@@ -72,8 +72,11 @@
               <button type="submit" class="btn btn-primary">Sign up</button>
         </form> -->
 
+      </div>
+
+
         <!-- New Sig-Up Start -->
-        <form id="sign-up-form" class="dropdown-menu p-4 sign-up-form" aria-labelledby="sign-up-button">
+        <form id="sign-up-form" class="collapse sign-up-form">
           <div class="form-group">
             <input required type="email" name="credentials[email]" placeholder="Enter Email" class="form-control"/>
           </div>
@@ -86,12 +89,12 @@
           <button type="submit" class="btn btn-warning">Sign up</button>
         </form>
         <!-- New Sig-Up End -->
-    </div>
+
   </li>
 
         <li class="nav-item active">
           <div class="change-password-dropdown">
-            <button id='change-password-button' class="btn btn-warning navbar-btn dropdown-toggle hidden" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Password</button>
+            <button id='change-password-button' class="btn btn-warning navbar-btn hidden" type="button" data-toggle="collapse" data-target="#change-password-form" aria-controls="change-password-form" aria-expanded="false">Change Password</button>
             <!-- <form id="change-password-form" class="dropdown-menu p-4" aria-labelledby="change-password-button">
               <div class="form-group">
                   <label for="dropDownFormPasswordSignUp">Current Password</label>
@@ -104,7 +107,7 @@
             </form> -->
 
             <!-- New Change-Password Start -->
-            <form id="change-password-form" class="dropdown-menu p-4 change-password-form" aria-labelledby="change-password-button">
+            <form id="change-password-form" class="collapse change-password-form" aria-labelledby="change-password-button">
               <div class="form-group">
                 <input required type="password" name="passwords[old]" placeholder="Enter Old Password" class="form-control"/>
               </div>
