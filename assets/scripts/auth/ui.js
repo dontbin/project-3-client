@@ -3,6 +3,7 @@ const store = require('../store.js')
 const signUpSuccess = function (response) {
   $('#display-message').html('').hide()
   $('#sign-up-form').trigger('reset')
+  $('#sign-up-form').collapse()
   $('#display-message').text(`Success! Sign in with new credentials.`).fadeToggle().delay(2000).fadeToggle()
   $('#display-message').css('color', 'green')
 }
@@ -16,9 +17,9 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  $('#sign-up-form').collapse('hide')
   $('#change-password-button, #sign-out-button, #dashboard, .dashbutton, #owner-surveys').removeClass('hidden')
   $('#sign-up-button, #sign-in-button').addClass('hidden')
-
   $('#display-message').html('').hide()
   $('#sign-in-form').trigger('reset')
   $('#display-message').css('color', 'green')
@@ -50,6 +51,7 @@ const signOutSuccess = function () {
   store.user = null
   $('#change-password-button, #sign-out-button, #dashboard, .dashbutton, #owner-surveys').addClass('hidden')
   $('#sign-up-button, #sign-in-button').removeClass('hidden')
+  $('#sign-up-form, #change-password-form').collapse('hide')
   $('#display-message').html('').hide()
   $('#sign-up-form, #sign-in-form, #change-password-form').trigger('reset')
   $('#display-message').text(`You have signed out`).fadeToggle().delay(2000).fadeToggle()
