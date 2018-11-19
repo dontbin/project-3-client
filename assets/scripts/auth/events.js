@@ -5,9 +5,9 @@ const ui = require('./ui.js')
 const surveyApi = require('../survey/api.js')
 const surveyUi = require('../survey/ui.js')
 
-
 const onSignUp = function (event) {
   event.preventDefault()
+  $(event.target).collapse('toggle')
   const credentials = getFormFields(event.target)
   api.signUp(credentials)
     .then(ui.signUpSuccess)
@@ -16,6 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
+  $(event.target).collapse('toggle')
   const credentials = getFormFields(event.target)
   api.signIn(credentials)
     .then(ui.signInSuccess)
@@ -28,6 +29,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
+  $(event.target).collapse('toggle')
   const credentials = getFormFields(event.target)
   api.changePassword(credentials)
     .then(ui.changePasswordSuccess)

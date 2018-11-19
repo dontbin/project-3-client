@@ -1,7 +1,6 @@
 
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
-const Chart = require('chart.js')
 
 const showSurveys = function (response) {
   store.surveys = response.surveys

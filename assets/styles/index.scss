@@ -18,22 +18,22 @@ h2 {
 .sign-in-form {
   margin-left: 16%;
   margin-top: 10px;
-  border: 1px solid #28a745;
-  border-radius: 20px;
+  // border: 1px solid #28a745;
+  // border-radius: 20px;
 }
 
 .sign-up-form {
   margin-left: 24%;
   margin-top: 10px;
-  border: 1px solid #ffc107;
-  border-radius: 20px;
+  // border: 1px solid #ffc107;
+  // border-radius: 20px;
 }
 
 .change-password-form {
   margin-left: 22%;
   margin-top: 10px;
-  border: 1px solid #ffc107;
-  border-radius: 20px;
+  // border: 1px solid #ffc107;
+  // border-radius: 20px;
 }
 
 .create-survey-question {
@@ -173,4 +173,8 @@ li {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.remove_button {
+  margin-top: 3px;
 }
