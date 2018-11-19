@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>f2f</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" href="#">_Fist 2 5</a> -->
+    <img src='./public/images/fist2five.png' alt='f2f logo' width='20%' />
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        <div class="sign-in">
+          <button id='sign-in-button' class="btn btn-success navbar-btn sign-in-button" type="button" data-toggle="collapse" data-target="#sign-in-form" aria-controls="sign-in-form" aria-expanded="false">LOG IN</button>
+
+        <!-- <form id="sign-in-form" class="dropdown-menu p-4" aria-labelledby="sign-in-button">
+          <div class="form-group">
+            <label for="DropDownFormSignIn">Email address</label>
+            <input required type="email" name="credentials[email]" placeholder="Enter Email" />
+          </div>
+            <div class="form-group">
+              <label for="dropDownFormSignInPassword">Password</label>
+              <input required name="credentials[password]" type="password" placeholder="Enter Password" />
+            </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+        </form> -->
+      </div>
+        <!-- New Login Start -->
+        <form id="sign-in-form" class="collapse sign-in-form" aria-labelledby="sign-in-button">
+          <div class="form-group">
+            <input required type="email" name="credentials[email]" placeholder="Enter Email" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input required name="credentials[password]" type="password" placeholder="Enter Password" class="form-control"/>
+          </div>
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+        <!-- New Login End -->
+
+    </li>
+
+    <li class="nav-item active">
+      <div class="sign-up">
+
+        <button id='sign-up-button' class="btn btn-warning navbar-btn" type="button" data-toggle="collapse" data-target="#sign-up-form" aria-controls="sign-up-form" aria-expanded="false">SIGN-UP</button>
+        <!-- <form id=sign-up-form class="dropdown-menu p-4" aria-labelledby="sign-up-button">
+          <div class="form-group">
+            <label for="DropDownFormSignUp">Email address</label>
+            <input required type="email" name="credentials[email]" placeholder="Enter Email"/>
+          </div>
+            <div class="form-group">
+              <label for="dropDownFormPasswordSignUp">Password</label>
+              <input required name="credentials[password]" type="password" placeholder="Enter Password" />
+              <br>
+              <label for="dropDownFormPasswordSignUp">Confirm Password</label>
+              <input required name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+            </div>
+              <button type="submit" class="btn btn-primary">Sign up</button>
+        </form> -->
+
+      </div>
+
+
+        <!-- New Sign-Up Start -->
+        <form id="sign-up-form" class="collapse sign-up-form">
+          <div class="form-group">
+            <input required type="email" name="credentials[email]" placeholder="Enter Email" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input required name="credentials[password]" type="password" placeholder="Enter Password" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input required name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control"/>
+          </div>
+          <button type="submit" class="btn btn-warning">Sign up</button>
+        </form>
+        <!-- New Sig-Up End -->
+
+  </li>
+
+        <li class="nav-item active">
+          <div class="change-password-dropdown">
+            <button id='change-password-button' class="btn btn-warning navbar-btn hidden" type="button" data-toggle="collapse" data-target="#change-password-form" aria-controls="change-password-form" aria-expanded="false">Change Password</button>
+            <!-- <form id="change-password-form" class="dropdown-menu p-4" aria-labelledby="change-password-button">
+              <div class="form-group">
+                  <label for="dropDownFormPasswordSignUp">Current Password</label>
+                  <input required type="password" name="passwords[old]" placeholder="Enter Old Password" />
+                  <br>
+                  <label for="dropDownFormPasswordSignUp">New Password</label>
+                  <input required type="password" name="passwords[new]" placeholder="Enter New Password" />
+                </div>
+                  <button type="submit" class="btn btn-warning">Change Password</button>
+            </form> -->
+
+            <!-- New Change-Password Start -->
+            <form id="change-password-form" class="collapse change-password-form" aria-labelledby="change-password-button">
+              <div class="form-group">
+                <input required type="password" name="passwords[old]" placeholder="Enter Old Password" class="form-control"/>
+              </div>
+              <div class="form-group">
+                <input required type="password" name="passwords[new]" placeholder="Enter New Password" class="form-control"/>
+              </div>
+              <button type="submit" class="btn btn-warning">Change Password</button>
+            </form>
+            <!-- New Change-Password End -->
+
+        </div>
+        </li>
+        <li class="nav-item active">
+          <div>
+          <button id='sign-out-button' class="btn btn-danger navbar-btn hidden" type="button">SIGN-OUT</button>
+        </div>
+        </li>
+        <li class="nav-item active">
+          <div id="dashboard-btn" class="dashbutton hidden">
+            <button id="create-button" type="button" class="btn btn-success create-button ">Create Survey</button>
+          </div>
+          <div id="view-surveys-btn" class="hidden">
+            <button id="view-button" type="button" class="btn btn-success create-button ">View All Surveys</button>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <div id="owner-surveys" class="delete-surveys hidden">
+            <button id="delete-surveys-btn" data-toggle="modal" data-target="#surveysModal"type="button" class="btn btn-success ">View/Edit Your Surveys</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="display-message"></div>
+  </nav>
+
+  <div class="modal fade" id="surveysModal" tabindex="-1" role="dialog" aria-labelledby="surveysModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="surveysModalLabel">Your Surveys</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="owner-surveys-display" class="owner-surveys-display "></div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="tensection"> -->
+  <div id="create-survey-form" class="hidden" >
+    <form id="add-survey-form" class="create-survey-question">
+      <div class="form-group">
+        <input required type="text" name="title" maxlength="25" placeholder="Enter Survey Title" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <input required type="text" name="question" maxlength="55" placeholder="Enter question fist to 5" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  <!-- <div class="tensection"> -->
+  <!-- New Create Survey form Start -->
+  <!-- <div id="create-survey-form" class="hidden" >
+    <form id="add-survey-form" class="create-survey-question dropdown-menu p-4 sign-in-form" aria-labelledby="sign-in-button">
+      <div class="form-group">
+        <input required type="text" name="title" placeholder="Enter Survey Title" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <input required type="text" name="question" placeholder="Enter question fist to 5" class="form-control"/>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div> -->
+  <!-- New Create Survey form End -->
+
+  <div id="dashboard" class='hidden'>
+
+  </div>
+
+</body>
+
+</html>
